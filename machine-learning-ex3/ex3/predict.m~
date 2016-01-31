@@ -21,12 +21,13 @@ p = zeros(size(X, 1), 1);
 %       can use max(A, [], 2) to obtain the max for each row.
 %
 
-%hidden layer
-hl = sigmoid([ones(m,1) X] * Theta1');
-%output layer
-ol = sigmoid([ones(m,1) hl] * Theta2');
-%Get the indicies of the largest vectors per row
-[output, p] = max(ol, [], 2);
+disp('X');
+row1 = ones(m);
+X = [row1 X];
+
+disp('theta');
+disp(Theta1);
+disp(X * Theta1');
 
 % =========================================================================
 

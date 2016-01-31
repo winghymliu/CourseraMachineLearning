@@ -29,12 +29,15 @@ X = [ones(m, 1) X];
 %       are in rows, then, you can use max(A, [], 2) to obtain the max 
 %       for each row.
 %       
-
-
-
-
-
-
+%calculate the probability by working out h
+%[M,I] = max(___) If A is a matrix, then max(A) is a row vector containing
+%the maximum value of each column.
+%[M,I] = max(___) finds the indices of the maximum values of A and returns them in output vector I, 
+%using any of the input arguments in the previous syntaxes. If the maximum value occurs more than once, 
+%then max returns the index corresponding to the first occurrence.
+h = sigmoid(X * all_theta');
+[maxV, maxI] = max(h');
+p = maxI';
 
 % =========================================================================
 
